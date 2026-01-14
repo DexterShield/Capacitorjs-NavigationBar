@@ -4,9 +4,23 @@
 
 ## Install
 
+### With Github Packages
+
 ```bash
-npm install github:DexterShield/Capacitorjs-NavigationBar
-npx cap sync
+$ npm login --scope=@dextershield --auth-type=legacy --registry=https://npm.pkg.github.com
+
+> Username: USERNAME
+> Password: TOKEN (classic)
+
+$ npm install @dextershield/navigation-bar
+$ npx cap sync
+```
+
+### Legacy Way
+
+```bash
+$ npm install github:DexterShield/Capacitorjs-NavigationBar
+$ npx cap sync
 ```
 
 ## API
