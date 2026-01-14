@@ -1,6 +1,6 @@
 # @dextershield/navigation-bar
 
-> <img src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg" alt="Capacitorjs" width="50" /> Capacitorjs
+> <img src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg" alt="Capacitorjs" width="24" /> Capacitorjs
 > NavigationBar Manipulator Plugin for Android 11+
 
 ## Install
