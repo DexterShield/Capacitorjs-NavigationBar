@@ -1,6 +1,6 @@
-# Capacitorjs-NavigationBar
+# ![Capacitorjs](https://www.svgrepo.com/show/353536/capacitorjs-icon.svg) Capacitorjs-NavigationBar
 
-NavigationBar Manipulator for Android
+NavigationBar Manipulator for Android 11+ (CapacitorJS)
 
 ## Install
 
