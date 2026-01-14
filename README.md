@@ -5,7 +5,7 @@ NavigationBar Manipulator for Android
 ## Install
 
 ```bash
-npm install npm install github:DexterShield/Capacitorjs-NavigationBar
+npm install github:DexterShield/Capacitorjs-NavigationBar
 npx cap sync
 ```
 
