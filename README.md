@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npm install @dextershield/navigation-bar
+npm install github:DexterShield/Capacitorjs-NavigationBar
 npx cap sync
 ```
 

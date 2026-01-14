@@ -62,5 +62,8 @@
         "android": {
             "src": "android"
         }
+    },
+    "dependencies": {
+        "@dextershield/navigation-bar": "^0.0.1"
     }
 }
