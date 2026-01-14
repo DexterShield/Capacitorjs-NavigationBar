@@ -1,14 +1,11 @@
-# <img src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg" alt="Capacitorjs" style="margin-right: 4px; width: 16px"/> Capacitorjs NavigationBar Manipulator Plugin for Android 11+
+# @dextershield/navigation-bar
 
-> @dextershield/navigation-bar
-
-> <img
->   src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg"
->   alt="Capacitorjs"
->   width="16"
->   style="margin-right: 4px"
-> />
-> Capacitorjs NavigationBar Manipulator Plugin for Android 11+
+<img
+  src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg"
+  alt="Capacitorjs"
+  style="margin-right: 4px; width: 14px"
+/>
+Capacitorjs NavigationBar Manipulator Plugin for Android 11+Capacitorjs NavigationBar Manipulator Plugin for Android 11+
 
 ## Install
 
