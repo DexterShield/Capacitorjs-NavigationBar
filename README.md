@@ -27,6 +27,8 @@ import { NavigationBar } from '@dextershield/navigation-bar';
 await hideNavigationBar({ method: 'IMMERSIVE' });
 ```
 
+### Functions
+
 <docgen-index>
 
 - [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
