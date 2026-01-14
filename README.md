@@ -1,4 +1,4 @@
-# ![Capacitorjs](https://www.svgrepo.com/show/353536/capacitorjs-icon.svg) Capacitorjs-NavigationBar
+# <img src="https://www.svgrepo.com/show/353536/capacitorjs-icon.svg" alt="Capacitorjs" width="50"/> Capacitorjs-NavigationBar
 
 NavigationBar Manipulator for Android 11+ (CapacitorJS)
 
