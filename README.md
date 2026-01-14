@@ -11,20 +11,28 @@ npx cap sync
 
 ## API
 
-- Methods:
+### Options:
 
 ```
-    IMMERSIVE, // BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-    IMMERSIVE_STICKY, // BEHAVIOR_SHOW_BARS_BY_SWIPE
-    LEAN_BACK, // BEHAVIOR_SHOW_BARS_BY_TOUCH
+IMMERSIVE, // BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+IMMERSIVE_STICKY, // BEHAVIOR_SHOW_BARS_BY_SWIPE
+LEAN_BACK, // BEHAVIOR_SHOW_BARS_BY_TOUCH
+```
+
+### Example
+
+```javascript
+import { NavigationBar } from '@dextershield/navigation-bar';
+
+await hideNavigationBar({ method: 'IMMERSIVE' });
 ```
 
 <docgen-index>
 
-* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
-* [`hideNavigationBar(...)`](#hidenavigationbar)
-* [`showNavigationBarCompat()`](#shownavigationbarcompat)
-* [`showNavigationBar()`](#shownavigationbar)
+- [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
+- [`hideNavigationBar(...)`](#hidenavigationbar)
+- [`showNavigationBarCompat()`](#shownavigationbarcompat)
+- [`showNavigationBar()`](#shownavigationbar)
 
 </docgen-index>
 
@@ -45,8 +53,7 @@ Hide navigation bar using AndroidX WindowCompat
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
---------------------
-
+---
 
 ### hideNavigationBar(...)
 
@@ -62,8 +69,7 @@ Hide navigation bar using direct Android API
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
---------------------
-
+---
 
 ### showNavigationBarCompat()
 
@@ -75,8 +81,7 @@ Show navigation bar using AndroidX WindowCompat
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
---------------------
-
+---
 
 ### showNavigationBar()
 
@@ -88,6 +93,6 @@ Show navigation bar using direct Android API
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
---------------------
+---
 
 </docgen-api>
