@@ -1,0 +1,67 @@
+{
+  "api": {
+    "name": "NavigationBarPlugin",
+    "slug": "navigationbarplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "hideNavigationBarCompat",
+        "signature": "(options?: { method?: \"IMMERSIVE\" | \"IMMERSIVE_STICKY\" | \"LEAN_BACK\" | undefined; } | undefined) => Promise<{ success: boolean; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK' | undefined; } | undefined"
+          }
+        ],
+        "returns": "Promise<{ success: boolean; }>",
+        "tags": [],
+        "docs": "Hide navigation bar using AndroidX WindowCompat",
+        "complexTypes": [],
+        "slug": "hidenavigationbarcompat"
+      },
+      {
+        "name": "hideNavigationBar",
+        "signature": "(options?: { method?: \"IMMERSIVE\" | \"IMMERSIVE_STICKY\" | \"LEAN_BACK\" | undefined; } | undefined) => Promise<{ success: boolean; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK' | undefined; } | undefined"
+          }
+        ],
+        "returns": "Promise<{ success: boolean; }>",
+        "tags": [],
+        "docs": "Hide navigation bar using direct Android API",
+        "complexTypes": [],
+        "slug": "hidenavigationbar"
+      },
+      {
+        "name": "showNavigationBarCompat",
+        "signature": "() => Promise<{ success: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ success: boolean; }>",
+        "tags": [],
+        "docs": "Show navigation bar using AndroidX WindowCompat",
+        "complexTypes": [],
+        "slug": "shownavigationbarcompat"
+      },
+      {
+        "name": "showNavigationBar",
+        "signature": "() => Promise<{ success: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ success: boolean; }>",
+        "tags": [],
+        "docs": "Show navigation bar using direct Android API",
+        "complexTypes": [],
+        "slug": "shownavigationbar"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}

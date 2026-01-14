@@ -11,26 +11,82 @@ npx cap sync
 
 ## API
 
+- Methods:
+
+```
+    IMMERSIVE, // BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+    IMMERSIVE_STICKY, // BEHAVIOR_SHOW_BARS_BY_SWIPE
+    LEAN_BACK, // BEHAVIOR_SHOW_BARS_BY_TOUCH
+```
+
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
+* [`hideNavigationBar(...)`](#hidenavigationbar)
+* [`showNavigationBarCompat()`](#shownavigationbarcompat)
+* [`showNavigationBar()`](#shownavigationbar)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### hideNavigationBarCompat(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+hideNavigationBarCompat(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_BACK" | undefined; } | undefined) => Promise<{ success: boolean; }>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+Hide navigation bar using AndroidX WindowCompat
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                                        |
+| ------------- | --------------------------------------------------------------------------- |
+| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> |
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
+
+--------------------
+
+
+### hideNavigationBar(...)
+
+```typescript
+hideNavigationBar(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_BACK" | undefined; } | undefined) => Promise<{ success: boolean; }>
+```
+
+Hide navigation bar using direct Android API
+
+| Param         | Type                                                                        |
+| ------------- | --------------------------------------------------------------------------- |
+| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> |
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
+
+--------------------
+
+
+### showNavigationBarCompat()
+
+```typescript
+showNavigationBarCompat() => Promise<{ success: boolean; }>
+```
+
+Show navigation bar using AndroidX WindowCompat
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
+
+--------------------
+
+
+### showNavigationBar()
+
+```typescript
+showNavigationBar() => Promise<{ success: boolean; }>
+```
+
+Show navigation bar using direct Android API
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
 --------------------
 
