@@ -10,9 +10,6 @@
         "android/src/main/",
         "android/build.gradle",
         "dist/",
-        "ios/Sources",
-        "ios/Tests",
-        "Package.swift",
         "NavigationBar.podspec"
     ],
     "author": "yosri@dextershield.com",
@@ -35,7 +32,6 @@
         "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
         "clean": "rimraf ./dist",
         "watch": "tsc --watch",
-        "prepublishOnly": "npm run build",
         "prepare": "npm run build"
     },
     "devDependencies": {

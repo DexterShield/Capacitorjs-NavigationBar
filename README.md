@@ -31,10 +31,10 @@ await hideNavigationBar({ method: 'IMMERSIVE' });
 
 <docgen-index>
 
-- [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
-- [`hideNavigationBar(...)`](#hidenavigationbar)
-- [`showNavigationBarCompat()`](#shownavigationbarcompat)
-- [`showNavigationBar()`](#shownavigationbar)
+* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
+* [`hideNavigationBar(...)`](#hidenavigationbar)
+* [`showNavigationBarCompat()`](#shownavigationbarcompat)
+* [`showNavigationBar()`](#shownavigationbar)
 
 </docgen-index>
 
@@ -55,7 +55,8 @@ Hide navigation bar using AndroidX WindowCompat
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### hideNavigationBar(...)
 
@@ -71,7 +72,8 @@ Hide navigation bar using direct Android API
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### showNavigationBarCompat()
 
@@ -83,7 +85,8 @@ Show navigation bar using AndroidX WindowCompat
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### showNavigationBar()
 
@@ -95,6 +98,6 @@ Show navigation bar using direct Android API
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
 
 </docgen-api>
