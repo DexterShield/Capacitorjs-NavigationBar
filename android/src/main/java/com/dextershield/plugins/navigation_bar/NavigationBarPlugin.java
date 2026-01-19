@@ -15,10 +15,10 @@ public class NavigationBarPlugin extends Plugin {
     @Override
     public void load() {
         super.load();
-        Boolean enabled = getConfig().getBoolean("enabled", false);
+        boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
             String method = getConfig().getString("method", "IMMERSIVE");
-            Boolean compact = getConfig().getBoolean("compact", false);
+            boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
                 _hideNavigationBarCompat(method);
             } else {
@@ -48,7 +48,7 @@ public class NavigationBarPlugin extends Plugin {
     @PluginMethod
     public void hideNavigationBarCompat(PluginCall call) {
         String methodString = call.getString("method", "IMMERSIVE");
-        Booleon res = _hideNavigationBarCompat(methodString);
+        boolean res = _hideNavigationBarCompat(methodString);
         if (!res) {
             call.reject("Activity not available");
             return;
@@ -78,7 +78,7 @@ public class NavigationBarPlugin extends Plugin {
     @PluginMethod
     public void hideNavigationBar(PluginCall call) {
         String methodString = call.getString("method", "IMMERSIVE");
-        Booleon res = _hideNavigationBar(methodString);
+        boolean res = _hideNavigationBar(methodString);
         if (!res) {
             call.reject("Activity not available");
             return;
