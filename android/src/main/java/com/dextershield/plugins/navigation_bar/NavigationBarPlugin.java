@@ -18,7 +18,7 @@ public class NavigationBarPlugin extends Plugin {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
-            Logger.debug("HERE");
+            Logger.error("HERE");
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
