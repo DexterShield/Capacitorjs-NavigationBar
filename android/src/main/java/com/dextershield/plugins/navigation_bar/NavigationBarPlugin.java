@@ -69,8 +69,9 @@ public class NavigationBarPlugin extends Plugin {
         Log.d(TAG, "HEREs");
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
-            getBridge().runOnUiThread(() -> {
-                implementation.hideNavigationBar(activity, _method);
+            implementation.hideNavigationBar(activity, _method);
+            activity.runOnUiThread(() -> {
+
             });
             return true;
         } catch (IllegalArgumentException e) {
