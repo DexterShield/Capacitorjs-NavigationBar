@@ -18,5 +18,6 @@ export interface NavigationBarPlugin {
 }
 export interface NavigationBarPluginConfig {
     method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK';
+    enabled?: boolean;
     compact?: boolean;
 }
