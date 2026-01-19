@@ -31,8 +31,7 @@
         "docgen": "docgen --api NavigationBarPlugin --output-readme README.md --output-json dist/docs.json",
         "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
         "clean": "rimraf ./dist",
-        "watch": "tsc --watch",
-        "prepare": "npm run build"
+        "watch": "tsc --watch"
     },
     "devDependencies": {
         "@capacitor/android": "^8.0.0",
@@ -50,9 +49,6 @@
         "swiftlint": "^2.0.0",
         "typescript": "^5.9.3"
     },
-    "peerDependencies": {
-        "@capacitor/core": ">=8.0.0"
-    },
     "prettier": "@ionic/prettier-config",
     "swiftlint": "@ionic/swiftlint-config",
     "eslintConfig": {
@@ -62,8 +58,5 @@
         "android": {
             "src": "android"
         }
-    },
-    "dependencies": {
-        "@capacitor/cli": ">=8.0.0"
     }
 }

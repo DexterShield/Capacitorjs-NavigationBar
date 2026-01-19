@@ -1,2 +1,2 @@
-import '@capacitor/cli';
+export {};
 //# sourceMappingURL=definitions.js.map

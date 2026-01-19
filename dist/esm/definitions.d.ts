@@ -20,14 +20,3 @@ export interface NavigationBarPluginConfig {
     method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK';
     compact?: boolean;
 }
-import '@capacitor/cli';
-declare module '@capacitor/cli' {
-    interface CapacitorConfig {
-        /**
-         * Custom configuration options
-         */
-        Plugins?: {
-            NavigationBarPlugin?: NavigationBarPluginConfig;
-        };
-    }
-}
