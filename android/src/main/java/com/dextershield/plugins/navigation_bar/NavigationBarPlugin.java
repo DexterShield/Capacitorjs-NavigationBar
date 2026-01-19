@@ -23,12 +23,8 @@ public class NavigationBarPlugin extends Plugin {
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
-
-                Log.d(TAG, "HEREs");
                 _hideNavigationBarCompat(method);
             } else {
-
-                Log.d(TAG, "HEREn");
                 _hideNavigationBar(method);
             }
         }
@@ -40,6 +36,7 @@ public class NavigationBarPlugin extends Plugin {
             return false;
         }
         try {
+            Log.d(TAG, "HEREn");
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBarCompat(activity, _method);
@@ -69,6 +66,7 @@ public class NavigationBarPlugin extends Plugin {
         if (activity == null) {
             return false;
         }
+        Log.d(TAG, "HEREs");
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             activity.runOnUiThread(() -> {
