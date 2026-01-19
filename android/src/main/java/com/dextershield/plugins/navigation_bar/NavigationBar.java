@@ -37,8 +37,6 @@ public class NavigationBar {
             WindowInsetsController controller = window.getInsetsController();
 
             if (controller != null) {
-                // Hide the navigation bars
-                controller.hide(WindowInsets.Type.navigationBars());
 
                 // Set behavior based on method
                 switch (method) {
@@ -51,11 +49,11 @@ public class NavigationBar {
                                 WindowInsetsController.BEHAVIOR_SHOW_BARS_BY_TOUCH);
                         break;
                     case IMMERSIVE:
-                    default:
                         controller.setSystemBarsBehavior(
                                 WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
                         break;
                 }
+                controller.hide(WindowInsets.Type.navigationBars());
             }
         }
     }
@@ -74,9 +72,6 @@ public class NavigationBar {
         WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
 
         if (controller != null) {
-            // Hide the navigation bars
-            controller.hide(WindowInsetsCompat.Type.navigationBars());
-
             // Set behavior based on method
             switch (method) {
                 case IMMERSIVE_STICKY:
@@ -88,11 +83,11 @@ public class NavigationBar {
                             WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH);
                     break;
                 case IMMERSIVE:
-                default:
                     controller.setSystemBarsBehavior(
                             WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
                     break;
             }
+            controller.hide(WindowInsetsCompat.Type.navigationBars());
         }
 
     }
