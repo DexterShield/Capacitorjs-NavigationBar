@@ -30,7 +30,7 @@ public class NavigationBarPlugin extends Plugin {
 
     private boolean _hideNavigationBarCompat(String method) {
         Activity activity = getActivity();
-        if (activity == null || activity.isFinishing()) {
+        if (activity == null) {
             return false;
         }
         try {
@@ -60,7 +60,7 @@ public class NavigationBarPlugin extends Plugin {
 
     private boolean _hideNavigationBar(String method) {
         Activity activity = getActivity();
-        if (activity == null || activity.isFinishing()) {
+        if (activity == null) {
             return false;
         }
         try {
