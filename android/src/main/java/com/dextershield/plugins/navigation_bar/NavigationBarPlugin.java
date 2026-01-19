@@ -6,26 +6,29 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.getcapacitor.Logger;
+import android.util.Log;
 
 @CapacitorPlugin(name = "NavigationBar")
 public class NavigationBarPlugin extends Plugin {
 
     private NavigationBar implementation = new NavigationBar();
+    private static final String TAG = "NavigationBarPlugin";
 
     @Override
     public void load() {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
-            Logger.error("HERE");
+            Log.d(TAG, "HERE");
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
-                Logger.debug("HEREs");
+
+                Log.d(TAG, "HEREs");
                 _hideNavigationBarCompat(method);
             } else {
-                Logger.debug("HEREn");
+
+                Log.d(TAG, "HEREn");
                 _hideNavigationBar(method);
             }
         }
