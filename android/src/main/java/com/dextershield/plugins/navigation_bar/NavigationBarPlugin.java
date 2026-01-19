@@ -38,8 +38,9 @@ public class NavigationBarPlugin extends Plugin {
         try {
             Log.d(TAG, "HEREn");
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
+            implementation.hideNavigationBarCompat(activity, _method);
             activity.runOnUiThread(() -> {
-                implementation.hideNavigationBarCompat(activity, _method);
+
             });
             return true;
         } catch (IllegalArgumentException e) {
@@ -70,8 +71,8 @@ public class NavigationBarPlugin extends Plugin {
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             implementation.hideNavigationBar(activity, _method);
-            activity.runOnUiThread(() -> {
 
+            activity.runOnUiThread(() -> {
             });
             return true;
         } catch (IllegalArgumentException e) {
