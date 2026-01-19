@@ -69,7 +69,7 @@ public class NavigationBarPlugin extends Plugin {
         Log.d(TAG, "HEREs");
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
-            activity.runOnUiThread(() -> {
+            getBridge().runOnUiThread(() -> {
                 implementation.hideNavigationBar(activity, _method);
             });
             return true;
