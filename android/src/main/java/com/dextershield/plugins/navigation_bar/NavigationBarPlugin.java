@@ -11,21 +11,26 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class NavigationBarPlugin extends Plugin {
 
     private NavigationBar implementation = new NavigationBar();
+    private static final String TAG = "NavigationBarPlugin";
 
     @Override
     public void load() {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
+            Log.d(TAG, "HERE");
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
+
+                Log.d(TAG, "HEREs");
                 _hideNavigationBarCompat(method);
             } else {
+
+                Log.d(TAG, "HEREn");
                 _hideNavigationBar(method);
             }
         }
-
     }
 
     private boolean _hideNavigationBarCompat(String method) {

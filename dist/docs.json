@@ -6,46 +6,46 @@
     "tags": [],
     "methods": [
       {
-        "name": "hideNavigationBarCompat",
-        "signature": "(options?: { method?: \"IMMERSIVE\" | \"IMMERSIVE_STICKY\" | \"LEAN_BACK\" | undefined; } | undefined) => Promise<{ success: boolean; }>",
-        "parameters": [
-          {
-            "name": "options",
-            "docs": "",
-            "type": "{ method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK' | undefined; } | undefined"
-          }
-        ],
-        "returns": "Promise<{ success: boolean; }>",
-        "tags": [],
-        "docs": "",
-        "complexTypes": [],
-        "slug": "hidenavigationbarcompat"
-      },
-      {
         "name": "hideNavigationBar",
         "signature": "(options?: { method?: \"IMMERSIVE\" | \"IMMERSIVE_STICKY\" | \"LEAN_BACK\" | undefined; } | undefined) => Promise<{ success: boolean; }>",
         "parameters": [
           {
             "name": "options",
-            "docs": "",
+            "docs": "- Configuration options",
             "type": "{ method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK' | undefined; } | undefined"
           }
         ],
         "returns": "Promise<{ success: boolean; }>",
-        "tags": [],
-        "docs": "",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Configuration options"
+          }
+        ],
+        "docs": "Hide navigation bar using direct Android API",
         "complexTypes": [],
         "slug": "hidenavigationbar"
       },
       {
-        "name": "showNavigationBarCompat",
-        "signature": "() => Promise<{ success: boolean; }>",
-        "parameters": [],
+        "name": "hideNavigationBarCompat",
+        "signature": "(options?: { method?: \"IMMERSIVE\" | \"IMMERSIVE_STICKY\" | \"LEAN_BACK\" | undefined; } | undefined) => Promise<{ success: boolean; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "- Configuration options",
+            "type": "{ method?: 'IMMERSIVE' | 'IMMERSIVE_STICKY' | 'LEAN_BACK' | undefined; } | undefined"
+          }
+        ],
         "returns": "Promise<{ success: boolean; }>",
-        "tags": [],
-        "docs": "",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options - Configuration options"
+          }
+        ],
+        "docs": "Hide navigation bar using AndroidX compatibility library",
         "complexTypes": [],
-        "slug": "shownavigationbarcompat"
+        "slug": "hidenavigationbarcompat"
       },
       {
         "name": "showNavigationBar",
@@ -53,9 +53,19 @@
         "parameters": [],
         "returns": "Promise<{ success: boolean; }>",
         "tags": [],
-        "docs": "",
+        "docs": "Show navigation bar using direct Android API",
         "complexTypes": [],
         "slug": "shownavigationbar"
+      },
+      {
+        "name": "showNavigationBarCompat",
+        "signature": "() => Promise<{ success: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ success: boolean; }>",
+        "tags": [],
+        "docs": "Show navigation bar using AndroidX compatibility library",
+        "complexTypes": [],
+        "slug": "shownavigationbarcompat"
       }
     ],
     "properties": []

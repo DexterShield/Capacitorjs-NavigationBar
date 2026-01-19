@@ -48,3 +48,10 @@ export interface NavigationBarConfig {
    */
   compact?: boolean;
 }
+
+// Augment Capacitor's PluginsConfig interface
+declare module '@capacitor/core' {
+  interface PluginsConfig {
+    NavigationBar?: NavigationBarConfig;
+  }
+}

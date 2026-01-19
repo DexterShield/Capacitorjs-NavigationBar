@@ -45,30 +45,15 @@ await hideNavigationBar({ method: 'IMMERSIVE' });
 
 <docgen-index>
 
-* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
 * [`hideNavigationBar(...)`](#hidenavigationbar)
-* [`showNavigationBarCompat()`](#shownavigationbarcompat)
+* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
 * [`showNavigationBar()`](#shownavigationbar)
+* [`showNavigationBarCompat()`](#shownavigationbarcompat)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
-
-### hideNavigationBarCompat(...)
-
-```typescript
-hideNavigationBarCompat(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_BACK" | undefined; } | undefined) => Promise<{ success: boolean; }>
-```
-
-| Param         | Type                                                                        |
-| ------------- | --------------------------------------------------------------------------- |
-| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> |
-
-**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
-
---------------------
-
 
 ### hideNavigationBar(...)
 
@@ -76,9 +61,41 @@ hideNavigationBarCompat(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | 
 hideNavigationBar(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_BACK" | undefined; } | undefined) => Promise<{ success: boolean; }>
 ```
 
-| Param         | Type                                                                        |
-| ------------- | --------------------------------------------------------------------------- |
-| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> |
+Hide navigation bar using direct Android API
+
+| Param         | Type                                                                        | Description             |
+| ------------- | --------------------------------------------------------------------------- | ----------------------- |
+| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> | - Configuration options |
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
+
+--------------------
+
+
+### hideNavigationBarCompat(...)
+
+```typescript
+hideNavigationBarCompat(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_BACK" | undefined; } | undefined) => Promise<{ success: boolean; }>
+```
+
+Hide navigation bar using AndroidX compatibility library
+
+| Param         | Type                                                                        | Description             |
+| ------------- | --------------------------------------------------------------------------- | ----------------------- |
+| **`options`** | <code>{ method?: 'IMMERSIVE' \| 'IMMERSIVE_STICKY' \| 'LEAN_BACK'; }</code> | - Configuration options |
+
+**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
+
+--------------------
+
+
+### showNavigationBar()
+
+```typescript
+showNavigationBar() => Promise<{ success: boolean; }>
+```
+
+Show navigation bar using direct Android API
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
@@ -91,16 +108,7 @@ hideNavigationBar(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_
 showNavigationBarCompat() => Promise<{ success: boolean; }>
 ```
 
-**Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
-
---------------------
-
-
-### showNavigationBar()
-
-```typescript
-showNavigationBar() => Promise<{ success: boolean; }>
-```
+Show navigation bar using AndroidX compatibility library
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
