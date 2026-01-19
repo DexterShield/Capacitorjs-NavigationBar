@@ -6,28 +6,26 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import com.getcapacitor.Logger;
 
 @CapacitorPlugin(name = "NavigationBar")
 public class NavigationBarPlugin extends Plugin {
 
     private NavigationBar implementation = new NavigationBar();
-    private static final String TAG = "NavigationBarPlugin";
 
     @Override
     public void load() {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
-            Log.d(TAG, "HERE");
+            Logger.debug("HERE");
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
-
-                Log.d(TAG, "HEREs");
+                Logger.debug("HEREs");
                 _hideNavigationBarCompat(method);
             } else {
-
-                Log.d(TAG, "HEREn");
+                Logger.debug("HEREn");
                 _hideNavigationBar(method);
             }
         }
