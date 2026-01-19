@@ -45,10 +45,10 @@ await hideNavigationBar({ method: 'IMMERSIVE' });
 
 <docgen-index>
 
-- [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
-- [`hideNavigationBar(...)`](#hidenavigationbar)
-- [`showNavigationBarCompat()`](#shownavigationbarcompat)
-- [`showNavigationBar()`](#shownavigationbar)
+* [`hideNavigationBarCompat(...)`](#hidenavigationbarcompat)
+* [`hideNavigationBar(...)`](#hidenavigationbar)
+* [`showNavigationBarCompat()`](#shownavigationbarcompat)
+* [`showNavigationBar()`](#shownavigationbar)
 
 </docgen-index>
 
@@ -67,7 +67,8 @@ hideNavigationBarCompat(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | 
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### hideNavigationBar(...)
 
@@ -81,7 +82,8 @@ hideNavigationBar(options?: { method?: "IMMERSIVE" | "IMMERSIVE_STICKY" | "LEAN_
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### showNavigationBarCompat()
 
@@ -91,7 +93,8 @@ showNavigationBarCompat() => Promise<{ success: boolean; }>
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
+
 
 ### showNavigationBar()
 
@@ -101,6 +104,6 @@ showNavigationBar() => Promise<{ success: boolean; }>
 
 **Returns:** <code>Promise&lt;{ success: boolean; }&gt;</code>
 
----
+--------------------
 
 </docgen-api>

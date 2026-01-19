@@ -15,12 +15,15 @@ public class NavigationBarPlugin extends Plugin {
     @Override
     public void load() {
         super.load();
-        String method = getConfig().getString("method", "IMMERSIVE");
-        Boolean compact = getConfig().getBoolean("compact", false);
-        if (compact) {
-            _hideNavigationBarCompat(method);
-        } else {
-            _hideNavigationBar(method);
+        Boolean enabled = getConfig().getBoolean("enabled", false);
+        if (enabled) {
+            String method = getConfig().getString("method", "IMMERSIVE");
+            Boolean compact = getConfig().getBoolean("compact", false);
+            if (compact) {
+                _hideNavigationBarCompat(method);
+            } else {
+                _hideNavigationBar(method);
+            }
         }
 
     }
