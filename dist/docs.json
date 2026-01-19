@@ -17,7 +17,7 @@
         ],
         "returns": "Promise<{ success: boolean; }>",
         "tags": [],
-        "docs": "Hide navigation bar using AndroidX WindowCompat",
+        "docs": "",
         "complexTypes": [],
         "slug": "hidenavigationbarcompat"
       },
@@ -33,7 +33,7 @@
         ],
         "returns": "Promise<{ success: boolean; }>",
         "tags": [],
-        "docs": "Hide navigation bar using direct Android API",
+        "docs": "",
         "complexTypes": [],
         "slug": "hidenavigationbar"
       },
@@ -43,7 +43,7 @@
         "parameters": [],
         "returns": "Promise<{ success: boolean; }>",
         "tags": [],
-        "docs": "Show navigation bar using AndroidX WindowCompat",
+        "docs": "",
         "complexTypes": [],
         "slug": "shownavigationbarcompat"
       },
@@ -53,7 +53,7 @@
         "parameters": [],
         "returns": "Promise<{ success: boolean; }>",
         "tags": [],
-        "docs": "Show navigation bar using direct Android API",
+        "docs": "",
         "complexTypes": [],
         "slug": "shownavigationbar"
       }

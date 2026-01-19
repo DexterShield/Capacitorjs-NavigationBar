@@ -1,6 +1,7 @@
 'use strict';
 
 var core = require('@capacitor/core');
+require('@capacitor/cli');
 
 var NavigationBar = core.registerPlugin('NavigationBar', {
     web: function () { return Promise.resolve().then(function () { return web; }).then(function (m) { return new m.NavigationBarWeb(); }); },

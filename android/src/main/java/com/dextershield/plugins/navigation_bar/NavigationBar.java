@@ -34,16 +34,6 @@ public class NavigationBar {
         View decorView = window.getDecorView();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11+ (API 30+)
-            hideNavigationBarModern(window, decorView, method);
-        }
-    }
-
-    /**
-     * Modern approach for Android 11+ using WindowInsetsController
-     */
-    private void hideNavigationBarModern(Window window, View decorView, HideMethod method) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsController controller = window.getInsetsController();
 
             if (controller != null) {
@@ -52,21 +42,19 @@ public class NavigationBar {
 
                 // Set behavior based on method
                 switch (method) {
-                    case IMMERSIVE:
-                        controller.setSystemBarsBehavior(
-                                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-                        break;
-
                     case IMMERSIVE_STICKY:
                         controller.setSystemBarsBehavior(
                                 WindowInsetsController.BEHAVIOR_SHOW_BARS_BY_SWIPE);
                         break;
-
                     case LEAN_BACK:
                         controller.setSystemBarsBehavior(
                                 WindowInsetsController.BEHAVIOR_SHOW_BARS_BY_TOUCH);
                         break;
-
+                    case IMMERSIVE:
+                    default:
+                        controller.setSystemBarsBehavior(
+                                WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                        break;
                 }
             }
         }
@@ -91,21 +79,19 @@ public class NavigationBar {
 
             // Set behavior based on method
             switch (method) {
-                case IMMERSIVE:
-                    controller.setSystemBarsBehavior(
-                            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-                    break;
-
                 case IMMERSIVE_STICKY:
                     controller.setSystemBarsBehavior(
                             WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE);
                     break;
-
                 case LEAN_BACK:
                     controller.setSystemBarsBehavior(
                             WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH);
                     break;
-
+                case IMMERSIVE:
+                default:
+                    controller.setSystemBarsBehavior(
+                            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                    break;
             }
         }
 

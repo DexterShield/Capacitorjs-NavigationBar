@@ -12,58 +12,77 @@ public class NavigationBarPlugin extends Plugin {
 
     private NavigationBar implementation = new NavigationBar();
 
-    /**
-     * Hide navigation bar using AndroidX
-     * 
-     * @param call - Expects: { method: "IMMERSIVE" | "IMMERSIVE_STICKY" |
-     *             "LEAN_BACK" }
-     */
-    @PluginMethod
-    public void hideNavigationBarCompat(PluginCall call) {
-        Activity activity = getActivity();
-        if (activity == null) {
-            call.reject("Activity not available");
-            return;
+    @Override
+    public void load() {
+        super.load();
+        String method = getConfig().getString("method", "IMMERSIVE");
+        Boolean compact = getConfig().getBoolean("compact", false);
+        if (compact) {
+            _hideNavigationBarCompat(method);
+        } else {
+            _hideNavigationBar(method);
         }
 
-        String methodString = call.getString("method", "IMMERSIVE");
-        NavigationBar.HideMethod method = NavigationBar.HideMethod.valueOf(methodString);
-
-        // Run on UI thread
-        activity.runOnUiThread(() -> {
-            implementation.hideNavigationBarCompat(activity, method);
-
-            JSObject ret = new JSObject();
-            ret.put("success", true);
-            call.resolve(ret);
-        });
     }
 
-    /**
-     * Hide navigation bar using direct Android API
-     * 
-     * @param call - Expects: { method: "IMMERSIVE" | "IMMERSIVE_STICKY" |
-     *             "LEAN_BACK" }
-     */
-    @PluginMethod
-    public void hideNavigationBar(PluginCall call) {
+    private boolean _hideNavigationBarCompat(String method) {
         Activity activity = getActivity();
-        if (activity == null) {
+        if (activity == null || activity.isFinishing()) {
+            return false;
+        }
+        try {
+            NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
+            activity.runOnUiThread(() -> {
+                implementation.hideNavigationBarCompat(activity, _method);
+            });
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+
+    }
+
+    @PluginMethod
+    public void hideNavigationBarCompat(PluginCall call) {
+        String methodString = call.getString("method", "IMMERSIVE");
+        Booleon res = _hideNavigationBarCompat(methodString);
+        if (!res) {
             call.reject("Activity not available");
             return;
         }
+        JSObject ret = new JSObject();
+        ret.put("success", res);
+        call.resolve(ret);
+    }
 
+    private boolean _hideNavigationBar(String method) {
+        Activity activity = getActivity();
+        if (activity == null || activity.isFinishing()) {
+            return false;
+        }
+        try {
+            NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
+            activity.runOnUiThread(() -> {
+                implementation.hideNavigationBar(activity, _method);
+            });
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
+
+    }
+
+    @PluginMethod
+    public void hideNavigationBar(PluginCall call) {
         String methodString = call.getString("method", "IMMERSIVE");
-        NavigationBar.HideMethod method = NavigationBar.HideMethod.valueOf(methodString);
-
-        // Run on UI thread
-        activity.runOnUiThread(() -> {
-            implementation.hideNavigationBar(activity, method);
-
-            JSObject ret = new JSObject();
-            ret.put("success", true);
-            call.resolve(ret);
-        });
+        Booleon res = _hideNavigationBar(methodString);
+        if (!res) {
+            call.reject("Activity not available");
+            return;
+        }
+        JSObject ret = new JSObject();
+        ret.put("success", res);
+        call.resolve(ret);
     }
 
     /**
