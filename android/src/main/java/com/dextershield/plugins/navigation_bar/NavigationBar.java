@@ -29,11 +29,9 @@ public class NavigationBar {
      * @param method   The hide method to use
      */
     public void hideNavigationBar(Activity activity, HideMethod method) {
-
-        Window window = activity.getWindow();
-        View decorView = window.getDecorView();
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            Window window = activity.getWindow();
+            View decorView = window.getDecorView();
             WindowInsetsController controller = window.getInsetsController();
             controller.hide(WindowInsets.Type.navigationBars());
             if (controller != null) {
@@ -64,32 +62,32 @@ public class NavigationBar {
      * @param method   The hide method to use
      */
     public void hideNavigationBarCompat(Activity activity, HideMethod method) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            Window window = activity.getWindow();
+            WindowCompat.setDecorFitsSystemWindows(window, false);
 
-        Window window = activity.getWindow();
-        WindowCompat.setDecorFitsSystemWindows(window, false);
+            WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
 
-        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
+            if (controller != null) {
+                controller.hide(WindowInsetsCompat.Type.navigationBars());
 
-        if (controller != null) {
-            controller.hide(WindowInsetsCompat.Type.navigationBars());
-
-            switch (method) {
-                case IMMERSIVE_STICKY:
-                    controller.setSystemBarsBehavior(
-                            WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE);
-                    break;
-                case LEAN_BACK:
-                    controller.setSystemBarsBehavior(
-                            WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH);
-                    break;
-                case IMMERSIVE:
-                default:
-                    controller.setSystemBarsBehavior(
-                            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-                    break;
+                switch (method) {
+                    case IMMERSIVE_STICKY:
+                        controller.setSystemBarsBehavior(
+                                WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_SWIPE);
+                        break;
+                    case LEAN_BACK:
+                        controller.setSystemBarsBehavior(
+                                WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH);
+                        break;
+                    case IMMERSIVE:
+                    default:
+                        controller.setSystemBarsBehavior(
+                                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+                        break;
+                }
             }
         }
-
     }
 
     /**
@@ -98,17 +96,17 @@ public class NavigationBar {
      * @param activity The current activity
      */
     public void showNavigationBar(Activity activity) {
-
-        Window window = activity.getWindow();
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // Android 11+
-            WindowInsetsController controller = window.getInsetsController();
-            if (controller != null) {
-                controller.show(WindowInsets.Type.navigationBars());
+            Window window = activity.getWindow();
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                // Android 11+
+                WindowInsetsController controller = window.getInsetsController();
+                if (controller != null) {
+                    controller.show(WindowInsets.Type.navigationBars());
+                }
             }
         }
-
     }
 
     /**
@@ -117,14 +115,14 @@ public class NavigationBar {
      * @param activity The current activity
      */
     public void showNavigationBarCompat(Activity activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            Window window = activity.getWindow();
+            WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
 
-        Window window = activity.getWindow();
-        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
+            if (controller != null) {
+                controller.show(WindowInsetsCompat.Type.navigationBars());
+            }
 
-        if (controller != null) {
-            controller.show(WindowInsetsCompat.Type.navigationBars());
         }
-
     }
-
 }
