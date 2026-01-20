@@ -22,7 +22,6 @@ public class NavigationBarPlugin extends Plugin {
         boolean compact = getConfig().getBoolean("compact", false);
         getBridge().executeOnMainThread(() -> {
             if (enabled) {
-                Log.d(TAG, "Running");
                 if (compact) {
                     _hideNavigationBarCompat(method);
                 } else {
