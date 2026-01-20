@@ -19,7 +19,6 @@ public class NavigationBarPlugin extends Plugin {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
-            Log.d(TAG, "HERE");
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
             if (compact) {
@@ -36,7 +35,6 @@ public class NavigationBarPlugin extends Plugin {
             return false;
         }
         try {
-            Log.d(TAG, "HEREn");
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBarCompat(activity, _method);
@@ -66,12 +64,13 @@ public class NavigationBarPlugin extends Plugin {
         if (activity == null) {
             return false;
         }
-
-        Log.d(TAG, "HEREs");
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
+            Log.d(TAG, method);
+
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBar(activity, _method);
+                Log.d(TAG, "in UI");
             });
             return true;
         } catch (IllegalArgumentException e) {

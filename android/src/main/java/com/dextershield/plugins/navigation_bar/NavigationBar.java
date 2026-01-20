@@ -37,8 +37,6 @@ public class NavigationBar {
             WindowInsetsController controller = window.getInsetsController();
 
             if (controller != null) {
-
-                // Set behavior based on method
                 switch (method) {
                     case IMMERSIVE_STICKY:
                         controller.setSystemBarsBehavior(
