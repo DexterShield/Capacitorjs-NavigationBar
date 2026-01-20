@@ -19,15 +19,15 @@ public class NavigationBarPlugin extends Plugin {
         boolean enabled = getConfig().getBoolean("enabled", false);
         String method = getConfig().getString("method", "IMMERSIVE");
         boolean compact = getConfig().getBoolean("compact", false);
-        getBridge().executeOnMainThread(() -> {
-            if (enabled) {
-                if (compact) {
-                    _hideNavigationBarCompat(method);
-                } else {
-                    _hideNavigationBar(method);
-                }
+
+        if (enabled) {
+            if (compact) {
+                _hideNavigationBarCompat(method);
+            } else {
+                _hideNavigationBar(method);
             }
-        });
+        }
+
     }
 
     private boolean _hideNavigationBarCompat(String method) {
