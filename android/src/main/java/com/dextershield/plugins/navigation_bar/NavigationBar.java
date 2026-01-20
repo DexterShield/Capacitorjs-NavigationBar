@@ -14,8 +14,6 @@ import com.getcapacitor.Logger;
 
 public class NavigationBar {
 
-    private static final String TAG = "NavigationBar";
-
     public enum HideMethod {
         IMMERSIVE, // BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         IMMERSIVE_STICKY, // BEHAVIOR_SHOW_BARS_BY_SWIPE

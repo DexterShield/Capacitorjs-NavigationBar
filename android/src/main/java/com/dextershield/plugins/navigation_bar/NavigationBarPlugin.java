@@ -12,7 +12,6 @@ import android.util.Log;
 public class NavigationBarPlugin extends Plugin {
 
     private NavigationBar implementation = new NavigationBar();
-    private static final String TAG = "NavigationBarPlugin";
 
     @Override
     public void load() {
