@@ -14,20 +14,20 @@ public class NavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBarPlugin";
 
     @Override
-    public void handleOnResume() {
-        super.handleOnResume();
+    public void handleOnStart() {
+        super.handleOnStart();
         boolean enabled = getConfig().getBoolean("enabled", false);
         String method = getConfig().getString("method", "IMMERSIVE");
         boolean compact = getConfig().getBoolean("compact", false);
-
-        if (enabled) {
-            if (compact) {
-                _hideNavigationBarCompat(method);
-            } else {
-                _hideNavigationBar(method);
+        getBridge().executeOnMainThread(() -> {
+            if (enabled) {
+                if (compact) {
+                    _hideNavigationBarCompat(method);
+                } else {
+                    _hideNavigationBar(method);
+                }
             }
-        }
-
+        });
     }
 
     private boolean _hideNavigationBarCompat(String method) {
