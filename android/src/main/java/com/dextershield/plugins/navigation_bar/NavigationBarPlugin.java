@@ -16,6 +16,7 @@ public class NavigationBarPlugin extends Plugin {
 
     @Override
     protected void handleOnStart() {
+        super.handleOnStart();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
             String method = getConfig().getString("method", "IMMERSIVE");
@@ -26,6 +27,11 @@ public class NavigationBarPlugin extends Plugin {
                 _hideNavigationBar(method);
             }
         }
+    }
+
+    @Override
+    protected void handleOnResume() {
+        super.handleOnResume();
     }
 
     private boolean _hideNavigationBarCompat(String method) {
