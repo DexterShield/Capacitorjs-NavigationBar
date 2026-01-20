@@ -15,7 +15,7 @@ public class NavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBarPlugin";
 
     @Override
-    protected void handleOnLoad() {
+    protected void handleOnStart() {
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
             String method = getConfig().getString("method", "IMMERSIVE");
