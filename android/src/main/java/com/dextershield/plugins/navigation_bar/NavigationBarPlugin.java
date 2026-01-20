@@ -15,7 +15,7 @@ public class NavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBarPlugin";
 
     @Override
-    protected void load() {
+    public void load() {
         super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
