@@ -23,6 +23,38 @@ $ npm install github:DexterShield/Capacitorjs-NavigationBar
 $ npx cap sync
 ```
 
+## Configuration
+
+You can configure the plugin to automatically hide the navigation bar when your app starts by adding configuration to your `capacitor.config.ts`:
+
+```typescript
+import { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.yourapp.id',
+  appName: 'YourApp',
+  webDir: 'dist',
+  plugins: {
+    NavigationBar: {
+      enabled: true, // Enable auto-hide on app start
+      method: 'IMMERSIVE_STICKY', // Hide method: 'IMMERSIVE', 'IMMERSIVE_STICKY', or 'LEAN_BACK'
+      compact: false, // Use AndroidX compatibility mode
+    },
+  },
+};
+
+export default config;
+```
+
+### Configuration Options
+
+- `enabled` (boolean, default: `false`) - Enable auto-hide navigation bar when app starts
+- `method` (string, default: `'IMMERSIVE'`) - Hide method to use
+  - `'IMMERSIVE'` - Hides navigation bar, shows on swipe
+  - `'IMMERSIVE_STICKY'` - Hides navigation bar, shows briefly on swipe then auto-hides
+  - `'LEAN_BACK'` - Hides navigation bar, shows on any touch
+- `compact` (boolean, default: `false`) - Use AndroidX compatibility library instead of direct Android API
+
 ## API
 
 ### Options:
