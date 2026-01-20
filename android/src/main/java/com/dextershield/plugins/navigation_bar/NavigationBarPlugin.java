@@ -16,16 +16,17 @@ public class NavigationBarPlugin extends Plugin {
 
     @Override
     protected void handleOnStart() {
-        super.handleOnStart();
+        super.load();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
+            String method = getConfig().getString("method", "IMMERSIVE");
+            boolean compact = getConfig().getBoolean("compact", false);
             getBridge().executeOnMainThread(() -> {
-                String method = getConfig().getString("method", "IMMERSIVE");
-                boolean compact = getConfig().getBoolean("compact", false);
                 if (compact) {
                     _hideNavigationBarCompat(method);
                 } else {
                     _hideNavigationBar(method);
+
                 }
             });
         }
@@ -67,18 +68,9 @@ public class NavigationBarPlugin extends Plugin {
         if (activity == null) {
             return false;
         }
-        try {
-            NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
-            Log.d(TAG, method);
-
-            activity.runOnUiThread(() -> {
-                implementation.hideNavigationBar(activity, _method);
-                Log.d(TAG, "in UI");
-            });
-            return true;
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
+        NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
+        implementation.hideNavigationBar(activity, _method);
+        return true;
 
     }
 
