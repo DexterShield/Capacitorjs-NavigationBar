@@ -15,8 +15,8 @@ public class NavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBarPlugin";
 
     @Override
-    protected void handleOnStart() {
-        super.handleOnStart();
+    protected void handleOnResume() {
+        super.handleOnResume();
         boolean enabled = getConfig().getBoolean("enabled", false);
         if (enabled) {
             String method = getConfig().getString("method", "IMMERSIVE");
@@ -27,11 +27,6 @@ public class NavigationBarPlugin extends Plugin {
                 _hideNavigationBar(method);
             }
         }
-    }
-
-    @Override
-    protected void handleOnResume() {
-        super.handleOnResume();
     }
 
     private boolean _hideNavigationBarCompat(String method) {
