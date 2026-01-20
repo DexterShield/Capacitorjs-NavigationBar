@@ -16,12 +16,11 @@ public class NavigationBarPlugin extends Plugin {
     @Override
     public void handleOnResume() {
         super.handleOnResume();
+        boolean enabled = getConfig().getBoolean("enabled", false);
+        String method = getConfig().getString("method", "IMMERSIVE");
+        boolean compact = getConfig().getBoolean("compact", false);
         getBridge().executeOnMainThread(() -> {
-            boolean enabled = getConfig().getBoolean("enabled", false);
             if (enabled) {
-                String method = getConfig().getString("method", "IMMERSIVE");
-                boolean compact = getConfig().getBoolean("compact", false);
-
                 if (compact) {
                     _hideNavigationBarCompat(method);
                 } else {
