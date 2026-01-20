@@ -21,7 +21,7 @@ public class NavigationBarPlugin extends Plugin {
         if (enabled) {
             String method = getConfig().getString("method", "IMMERSIVE");
             boolean compact = getConfig().getBoolean("compact", false);
-            getBridge().executeOnMainThread(() -> {
+            getBridge().executeOnUiThread(() -> {
                 if (compact) {
                     _hideNavigationBarCompat(method);
                 } else {
