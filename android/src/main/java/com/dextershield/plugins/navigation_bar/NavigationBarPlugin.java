@@ -6,7 +6,6 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import android.util.Log;
 
 @CapacitorPlugin(name = "NavigationBar")
 public class NavigationBarPlugin extends Plugin {
@@ -41,7 +40,6 @@ public class NavigationBarPlugin extends Plugin {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBarCompat(activity, _method);
-                Log.d(TAG, "in COMPACT");
             });
             return true;
         } catch (IllegalArgumentException e) {
@@ -70,11 +68,8 @@ public class NavigationBarPlugin extends Plugin {
         }
         try {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
-            Log.d(TAG, method);
-
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBar(activity, _method);
-                Log.d(TAG, "in UI");
             });
             return true;
         } catch (IllegalArgumentException e) {
