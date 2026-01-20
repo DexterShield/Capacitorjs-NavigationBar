@@ -38,6 +38,7 @@ public class NavigationBarPlugin extends Plugin {
             NavigationBar.HideMethod _method = NavigationBar.HideMethod.valueOf(method.toUpperCase());
             activity.runOnUiThread(() -> {
                 implementation.hideNavigationBarCompat(activity, _method);
+                Log.d(TAG, "in COMPACT");
             });
             return true;
         } catch (IllegalArgumentException e) {
