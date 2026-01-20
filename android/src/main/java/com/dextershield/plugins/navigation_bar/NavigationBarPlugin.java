@@ -14,8 +14,8 @@ public class NavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBarPlugin";
 
     @Override
-    public void handleOnStart() {
-        super.handleOnStart();
+    public void handleOnResume() {
+        super.handleOnResume();
         getBridge().executeOnMainThread(() -> {
             boolean enabled = getConfig().getBoolean("enabled", false);
             if (enabled) {
