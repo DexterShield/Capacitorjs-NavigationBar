@@ -6,6 +6,7 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
+import android.util.Log;
 
 @CapacitorPlugin(name = "NavigationBar")
 public class NavigationBarPlugin extends Plugin {
@@ -21,6 +22,7 @@ public class NavigationBarPlugin extends Plugin {
         boolean compact = getConfig().getBoolean("compact", false);
         getBridge().executeOnMainThread(() -> {
             if (enabled) {
+                Log.d(TAG, "Running");
                 if (compact) {
                     _hideNavigationBarCompat(method);
                 } else {
